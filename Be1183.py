@@ -1,4 +1,5 @@
 ## Acima da Diagonal Principal ##
+import random
 
 def main():
     #Entrada
@@ -11,12 +12,12 @@ def main():
     soma = 0
     elementsAbove = 0
 
-    for i in range(144):
-        vector.append(float(input()))
+    for i in range(4):
+        vector = []
 
-        if (i + 1) % 12 == 0:
-            matriz.append(vector)
-            vector = []
+        for j in range(4):
+            vector.append(random.randint(0,50))   
+        matriz.append(vector)
 
     for lineIndex in range(len(matriz)):
         currentLine = matriz[lineIndex]
