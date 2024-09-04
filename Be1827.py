@@ -26,9 +26,18 @@ def fillInternalPart(matriz, ordem):
     initial = ordem // 3
     final = ordem - ordem // 3 - 1
     
-    for i in range(inicial, final + 1):
-        for j in range(inicial, final + 1):
+    for i in range(initial, final + 1):
+        for j in range(initial, final + 1):
             matriz[i][j] = 1
+
+
+def fillCenter(matriz,order):
+    centerPosition = order // 2
+
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            if i == centerPosition and j == centerPosition:
+                matriz[i][j] = 4
 
 def main():
 

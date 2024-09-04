@@ -1,4 +1,4 @@
-## Matriz Quadrada 2 ##
+## Matriz Quadrada 3 ##
 
 def main():
     ## Entrada
@@ -12,14 +12,21 @@ def main():
         
         for i in range(order):
             vector = []
-            for j in range(order):
-                value = abs(i - j) + 1
-                vector.append(value)
-            matriz.append(vector)
 
+            for j in range(order):
+                value = 2 ** (j + i)
+                vector.append(value)
+
+    
+            matriz.append(vector)
+            
+        # Encontrar o maior valor na matriz para determinar o espaçamento
+        maxValue = matriz[-1][-1]
+        T = len(str(maxValue))
+
+       ## Saída
         for line in matriz:
-            ## Saída
-            print(" ".join(f"{num:3}" for num in line))
+            print(" ".join(f"{num:>{T}}" for num in line))
         print()
 
         matriz = []
